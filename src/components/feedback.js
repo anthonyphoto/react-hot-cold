@@ -9,8 +9,10 @@ export function Feedback(props) {
    * as a DOM change, even when a guess does not change the feedback text.
    * This is necessary for consistent aural feedback via aria-live.
   */
-  const key = props.guesses.length;
 
+  // const key = props.guesses.length;  // moved to mapStateToProps
+
+  const key = props.guessCount;
   console.log('Answer: ', props.correctAnswer);
 
   let guessAgain;
@@ -30,5 +32,8 @@ export function Feedback(props) {
   );
 }
 
-const mapStateToProps = state => state;
+const mapStateToProps = state => ({
+  guessCount: state.guesses.length,
+  feedback: state.feedback
+});
 export default connect(mapStateToProps)(Feedback);

@@ -3,47 +3,6 @@ import {connect} from 'react-redux';
 import {makeGuess} from '../actions';
 
 import './guess-form.css';
-/*
-function onSubmit(event, props, inp) {
-  event.preventDefault();
-  const input = parseInt(inp);
-  props.dispatch(makeGuess(input));
-
-//  inp.value = '';
-  inp.focus();
-}
-
-
-export function GuessForm (props) {
-    let submittedInput;
-    return (
-      <form onSubmit={e => onSubmit(e, props, submittedInput.value)}>
-        <input
-          type="number"
-          name="userGuess"
-          id="userGuess"
-          className="text"
-          min="1"
-          max="100"
-          autoComplete="off"
-          aria-labelledby="feedback"
-          ref={input => (submittedInput = input)}
-          required
-        />
-        <button 
-          type="submit"
-          name="submit"
-          id="guessButton" 
-          className="button"
-        >
-          Guess
-        </button>
-      </form>
-    );
-}
-
-export default connect()(GuessForm);
-*/
 
 export class GuessForm extends React.Component {
   onSubmit(event) {
